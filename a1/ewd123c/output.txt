@@ -1,0 +1,25 @@
+2023/11/03 15:41:06.264011 ewd123.go:40: *** Start EWD123c ***
+2023/11/03 15:41:06.322812 controller.go:33: entered CS: 2
+2023/11/03 15:41:06.322812 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 15:41:06.322812 ewd123c.go:39: Process 1 waiting
+2023/11/03 15:41:06.323349 controller.go:68: outside CS: 1 (100 msecs)  // Noch alles normal
+2023/11/03 15:41:06.386638 controller.go:48: left CS: 2
+2023/11/03 15:41:06.386638 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 15:41:06.432712 controller.go:33: entered CS: 1
+2023/11/03 15:41:06.432934 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 15:41:06.495067 controller.go:48: left CS: 1
+2023/11/03 15:41:06.495067 ewd123c.go:66: Process 2 waiting
+2023/11/03 15:41:06.495607 controller.go:68: outside CS: 2 (100 msecs)  // Ab hier nur noch abwechselndes warten
+2023/11/03 15:41:06.495067 controller.go:68: outside CS: 1 (100 msecs)  // Livelock
+2023/11/03 15:41:06.603775 ewd123c.go:39: Process 1 waiting
+...
+2023/11/03 15:41:15.887670 ewd123c.go:66: Process 2 waiting
+2023/11/03 15:41:15.887828 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 15:41:15.887670 ewd123c.go:39: Process 1 waiting
+2023/11/03 15:41:15.888369 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 15:41:15.996703 ewd123c.go:39: Process 1 waiting
+2023/11/03 15:41:15.996703 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 15:41:15.996703 ewd123c.go:66: Process 2 waiting
+2023/11/03 15:41:15.997284 controller.go:68: outside CS: 2 (100 msecs)
+
+Dies tritt auf wenn beide Prozesse nachenander c1 und c2 auf false setzen.

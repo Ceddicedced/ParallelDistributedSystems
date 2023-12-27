@@ -1,0 +1,87 @@
+2023/11/03 16:41:17.177367 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.177367 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.282772 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:17.282833 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:17.282833 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.283370 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.392579 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.392579 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.502287 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:17.502287 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:17.502493 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.503005 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.610688 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.610688 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.720860 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:17.720860 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.720860 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:17.721397 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.831997 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:17.831997 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.941175 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:17.941175 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:17.941175 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:17.941693 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.050826 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.050826 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.160199 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:18.160369 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.160199 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:18.160901 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.271686 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.271686 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.381598 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:18.381598 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.381534 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:18.382144 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.491404 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.491404 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.603211 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:18.603211 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.603211 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:18.603752 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.710463 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.710463 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.820141 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:18.820310 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:18.820141 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:18.820847 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.929559 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:18.929647 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.037757 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:19.037757 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.037757 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:19.038301 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.148961 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.149205 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.258780 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:19.258780 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.258780 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:19.259306 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.366523 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.366523 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.475448 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:19.475448 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.475448 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:19.476009 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.584077 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.584077 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.695367 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:19.695536 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.695367 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:19.696086 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.804359 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:19.804359 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.915733 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:19.915733 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:19.915733 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:19.916447 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:20.024337 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:41:20.024258 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:20.134147 ewd123d.go:72: Process 2 waiting
+2023/11/03 16:41:20.134237 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:41:20.134147 ewd123d.go:43: Process 1 waiting
+2023/11/03 16:41:20.134762 controller.go:68: outside CS: 1 (100 msecs) 
+
+
+Es wird nur Ping-Pong hin und her gespielt. Da die Prozesse die Variablen c1 und c2 immer wieder wechseln.

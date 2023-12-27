@@ -1,0 +1,159 @@
+2023/11/03 16:33:27.668508 ewd123.go:40: *** Start Dekker ***
+2023/11/03 16:33:27.724348 controller.go:33: entered CS: 2
+2023/11/03 16:33:27.724376 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:27.778555 controller.go:48: left CS: 2
+2023/11/03 16:33:27.778555 controller.go:33: entered CS: 1
+2023/11/03 16:33:27.778555 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:27.778555 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:27.841616 controller.go:48: left CS: 1
+2023/11/03 16:33:27.841616 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:27.888132 controller.go:33: entered CS: 2
+2023/11/03 16:33:27.888132 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:27.950819 controller.go:48: left CS: 2
+2023/11/03 16:33:27.951011 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:27.950819 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:27.951011 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.062590 controller.go:33: entered CS: 1
+2023/11/03 16:33:28.062590 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:28.062590 ewd123dekker.go:76: Process 2 waiting
+2023/11/03 16:33:28.062590 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:28.123662 controller.go:48: left CS: 1
+2023/11/03 16:33:28.123759 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.169877 controller.go:33: entered CS: 2
+2023/11/03 16:33:28.169877 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:28.232192 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:28.232338 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.232192 controller.go:48: left CS: 2
+2023/11/03 16:33:28.232338 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:28.344466 controller.go:33: entered CS: 2
+2023/11/03 16:33:28.344516 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:28.407653 controller.go:48: left CS: 2
+2023/11/03 16:33:28.407653 controller.go:33: entered CS: 1
+2023/11/03 16:33:28.407653 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:28.407653 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:28.471244 controller.go:48: left CS: 1
+2023/11/03 16:33:28.471244 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.518582 controller.go:33: entered CS: 2
+2023/11/03 16:33:28.518770 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:28.582529 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:28.582711 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.582529 controller.go:48: left CS: 2
+2023/11/03 16:33:28.582711 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:28.691584 controller.go:33: entered CS: 2
+2023/11/03 16:33:28.691584 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:28.754647 controller.go:48: left CS: 2
+2023/11/03 16:33:28.754647 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:28.754647 controller.go:33: entered CS: 1
+2023/11/03 16:33:28.754647 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:28.816858 controller.go:48: left CS: 1
+2023/11/03 16:33:28.816995 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.863838 controller.go:33: entered CS: 2
+2023/11/03 16:33:28.864068 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:28.931074 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:28.931610 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:28.931610 controller.go:48: left CS: 2
+2023/11/03 16:33:28.932140 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:29.038273 controller.go:33: entered CS: 2
+2023/11/03 16:33:29.038273 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:29.101597 controller.go:48: left CS: 2
+2023/11/03 16:33:29.101597 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:29.101597 controller.go:33: entered CS: 1
+2023/11/03 16:33:29.101597 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:29.164950 controller.go:48: left CS: 1
+2023/11/03 16:33:29.164950 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:29.211738 controller.go:33: entered CS: 2
+2023/11/03 16:33:29.211738 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:29.273559 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:29.273559 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:29.273559 controller.go:48: left CS: 2
+2023/11/03 16:33:29.273559 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:29.383037 controller.go:33: entered CS: 2
+2023/11/03 16:33:29.383114 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:29.446034 controller.go:48: left CS: 2
+2023/11/03 16:33:29.446034 controller.go:33: entered CS: 1
+2023/11/03 16:33:29.446034 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:29.446034 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:29.508796 controller.go:48: left CS: 1
+2023/11/03 16:33:29.508796 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:29.556068 controller.go:33: entered CS: 2
+2023/11/03 16:33:29.556203 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:29.619764 controller.go:48: left CS: 2
+2023/11/03 16:33:29.619764 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:29.619764 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:29.620295 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:29.729626 controller.go:33: entered CS: 1
+2023/11/03 16:33:29.729626 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:29.729626 ewd123dekker.go:76: Process 2 waiting
+2023/11/03 16:33:29.730166 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:29.792940 controller.go:48: left CS: 1
+2023/11/03 16:33:29.792940 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:29.840596 controller.go:33: entered CS: 2
+2023/11/03 16:33:29.840596 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:29.903128 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:29.903128 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:29.903128 controller.go:48: left CS: 2
+2023/11/03 16:33:29.903664 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:30.013575 controller.go:33: entered CS: 2
+2023/11/03 16:33:30.013575 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:30.076127 controller.go:48: left CS: 2
+2023/11/03 16:33:30.076127 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:30.076127 controller.go:33: entered CS: 1
+2023/11/03 16:33:30.076127 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:30.138139 controller.go:48: left CS: 1
+2023/11/03 16:33:30.138139 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:30.186030 controller.go:33: entered CS: 2
+2023/11/03 16:33:30.186210 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 16:33:30.250178 ewd123dekker.go:44: Process 1 waiting
+2023/11/03 16:33:30.250178 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:30.250178 controller.go:48: left CS: 2
+2023/11/03 16:33:30.250723 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 16:33:30.359367 ewd123dekker.go:93: Process 2 crashed
+2023/11/03 16:33:30.359367 controller.go:33: entered CS: 1
+2023/11/03 16:33:30.360320 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:30.420151 controller.go:48: left CS: 1
+2023/11/03 16:33:30.420151 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:30.530937 controller.go:33: entered CS: 1
+2023/11/03 16:33:30.530937 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:30.592578 controller.go:48: left CS: 1
+2023/11/03 16:33:30.592738 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:30.701581 controller.go:33: entered CS: 1
+2023/11/03 16:33:30.701581 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:30.764195 controller.go:48: left CS: 1
+2023/11/03 16:33:30.764283 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:30.875069 controller.go:33: entered CS: 1
+2023/11/03 16:33:30.875188 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:30.936495 controller.go:48: left CS: 1
+2023/11/03 16:33:30.936561 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:31.045579 controller.go:33: entered CS: 1
+2023/11/03 16:33:31.045674 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:31.107124 controller.go:48: left CS: 1
+2023/11/03 16:33:31.107247 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:31.217926 controller.go:33: entered CS: 1
+2023/11/03 16:33:31.217926 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:31.281547 controller.go:48: left CS: 1
+2023/11/03 16:33:31.281724 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:31.391894 controller.go:33: entered CS: 1
+2023/11/03 16:33:31.391894 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:31.454126 controller.go:48: left CS: 1
+2023/11/03 16:33:31.454126 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:31.563889 controller.go:33: entered CS: 1
+2023/11/03 16:33:31.563889 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:31.626868 controller.go:48: left CS: 1
+2023/11/03 16:33:31.626977 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:31.736180 controller.go:33: entered CS: 1
+2023/11/03 16:33:31.736596 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:31.797774 controller.go:48: left CS: 1
+2023/11/03 16:33:31.797854 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:31.906670 controller.go:33: entered CS: 1
+2023/11/03 16:33:31.906670 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:31.967701 controller.go:48: left CS: 1
+2023/11/03 16:33:31.967701 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:32.076124 controller.go:33: entered CS: 1
+2023/11/03 16:33:32.076261 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 16:33:32.139265 controller.go:48: left CS: 1
+2023/11/03 16:33:32.139265 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 16:33:32.249292 ewd123dekker.go:61: Process 1 crashed
+fatal error: all goroutines are asleep - deadlock!
+
+
+Keine Probleme beim ausführen - der GO deadlock kann ignoriert werden da es sich nicht um ein implemantierungsfehler handelt.

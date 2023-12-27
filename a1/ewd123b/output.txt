@@ -1,0 +1,14 @@
+Konsolen-Ausgabe:
+
+2023/11/03 15:36:32.032408 ewd123.go:40: *** Start EWD123b ***
+2023/11/03 15:36:32.091658 controller.go:33: entered CS: 2
+2023/11/03 15:36:32.091658 ewd123b.go:37: Process 1 waiting
+2023/11/03 15:36:32.092645 controller.go:68: outside CS: 1 (100 msecs)
+2023/11/03 15:36:32.092645 controller.go:58: inside CS: 2 (50 msecs)
+2023/11/03 15:36:32.152671 controller.go:48: left CS: 2
+2023/11/03 15:36:32.152671 controller.go:68: outside CS: 2 (100 msecs)
+2023/11/03 15:36:32.198081 controller.go:33: entered CS: 1
+2023/11/03 15:36:32.198383 controller.go:58: inside CS: 1 (50 msecs)
+2023/11/03 15:36:32.260049 controller.go:30: Process 2 tried to enter the critical section while it was already occupied by: 1
+
+KB wird nicht eingehalten, da Prozess 2 den KB betritt, obwohl Prozess 1 diesen noch besetzt hat.
