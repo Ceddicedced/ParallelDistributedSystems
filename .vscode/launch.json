@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "A1 - EWD123a",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "a1/ewd123.go",
+            "args": ["EWD123a"]
+        },
+        {
+            "name": "A1 - EWD123b",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "a1/ewd123.go",
+            "args": ["EWD123b"]
+        },
+        {
+            "name": "A1 - EWD123c",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "a1/ewd123.go",
+            "args": ["EWD123c"]
+        },
+        {
+            "name": "A1 - EWD123d",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "a1/ewd123.go",
+            "args": ["EWD123d"]
+        },
+        {
+            "name": "A1 - Dekker",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "a1/ewd123.go",
+            "args": ["Dekker"]
+        },
+        {
+            "name": "Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}",
+            "args": [""]
+        }
+    ]
+}
