@@ -45,6 +45,13 @@
             "args": ["Dekker"]
         },
         {
+            "name": "A3 - Traffic Light",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "a3/traffic_lights.go",
+        },
+        {
             "name": "Launch Package",
             "type": "go",
             "request": "launch",
