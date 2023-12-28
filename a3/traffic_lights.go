@@ -34,7 +34,7 @@ func nextColour(c Colour) Colour {
 }
 
 // TrafficLight goroutine.
-func TrafficLight(d CardinalDirection, axisFreeChan chan bool, redCountChan chan<- CardinalDirection, wg *sync.WaitGroup) {
+func TrafficLight(d CardinalDirection, axisFreeChan chan bool, redCountChan chan CardinalDirection, wg *sync.WaitGroup) {
 	defer wg.Done()
 	c := Red // Starting colour, initially set to Red.
 	for {
@@ -44,6 +44,7 @@ func TrafficLight(d CardinalDirection, axisFreeChan chan bool, redCountChan chan
 
 		if c == Red {
 			redCountChan <- d // Notify that this light is red.
+			<-redCountChan    // Wait for the other light to be red.
 		} else {
 			axisFreeChan <- true // Signal that the axis is free.
 		}
@@ -78,20 +79,24 @@ func main() {
 			if direction == North || direction == South {
 				redCountNorthSouth++
 				if redCountNorthSouth == 2 && currentAxis == NorthSouth {
+					redCountChan <- direction
 					currentAxis = EastWest
 					axisFreeChanEastWest <- true // Switch to East-West axis.
 					redCountNorthSouth = 0
 				} else {
 					axisFreeChanNorthSouth <- true
+					redCountChan <- direction
 				}
 			} else {
 				redCountEastWest++
 				if redCountEastWest == 2 && currentAxis == EastWest {
+					redCountChan <- direction
 					currentAxis = NorthSouth
 					axisFreeChanNorthSouth <- true // Switch to North-South axis.
 					redCountEastWest = 0
 				} else {
 					axisFreeChanEastWest <- true
+					redCountChan <- direction
 				}
 			}
 		}
