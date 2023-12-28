@@ -51,8 +51,8 @@ func TrafficLight(d CardinalDirection, axisFreeChan chan bool, redCountChan chan
 }
 
 func main() {
-	axisFreeChanNorthSouth := make(chan bool, 2)
-	axisFreeChanEastWest := make(chan bool, 2)
+	axisFreeChanNorthSouth := make(chan bool)
+	axisFreeChanEastWest := make(chan bool)
 	redCountChan := make(chan CardinalDirection)
 
 	// Counters for red lights.
@@ -60,7 +60,6 @@ func main() {
 	redCountEastWest := 0
 
 	currentAxis := NorthSouth // Start with North-South axis.
-	axisFreeChanNorthSouth <- true
 
 	var wg sync.WaitGroup
 	wg.Add(4)
@@ -70,6 +69,8 @@ func main() {
 	go TrafficLight(East, axisFreeChanEastWest, redCountChan, &wg)
 	go TrafficLight(South, axisFreeChanNorthSouth, redCountChan, &wg)
 	go TrafficLight(West, axisFreeChanEastWest, redCountChan, &wg)
+
+	axisFreeChanNorthSouth <- true
 
 	for {
 		select {
