@@ -1,0 +1,80 @@
+
+% Data types 
+sort
+    CardinalDirection = struct north | east | south | west;   % Directions of traffic lights
+    Axis = struct nsAxis | ewAxis;                            % Two axes to help manage traffic flow
+	Colour =  struct red | yellow | green;                 
+
+% Maps and equations 
+map
+    axis : CardinalDirection -> Axis;   % Assigns each direction to axi
+	next : Colour -> Colour;            % Function to determine the next colour
+    isSafe : Colour # Colour # Colour # Colour -> Bool; % Safety check function.
+
+% Variables representing the current colour in each direction.
+var
+    colourNorth : Colour;
+    colourEast : Colour;
+    colourSouth : Colour;
+    colourWest : Colour;
+
+% Equations defining traffic light
+eqn
+	axis(north) = nsAxis;    % North belongs to the north-south 
+    axis(south) = nsAxis;    % and also south
+    axis(east) = ewAxis;     % East is part of the east-west axis
+    axis(west) = ewAxis;     % likewise..
+    next(red) = green;       
+    next(green) = yellow;    
+    next(yellow) = red;      
+
+    % Safety conditions
+    isSafe(colourNorth, colourEast, colourSouth, colourWest) =
+        ((colourNorth in {green, yellow} || colourSouth in {green, yellow}) 
+        && (colourWest in {green, yellow} || colourEast in {green, yellow}));
+
+act
+    show : CardinalDirection # Colour;  % Action to display current colour
+
+% Traffic Light Process
+proc
+    % Each traffic light shows its current colour 
+    TrafficLight(d : CardinalDirection, startAxis : Axis) =
+        checked(d, red) . TrafficLight(d, red) % Start with red.
+    ;
+
+    % Main process to cycle color
+    TrafficLight(d : CardinalDirection, c : Colour) =
+        show(d, c) . TrafficLight(d, next(c)); 
+
+% Monitor Process
+proc
+    
+    Monitor(cNorth : Colour, cEast : Colour, cSouth : Colour, cWest : Colour) =
+        (safe(cNorth, cEast, cSouth, cWest)) -> error(cNorth, cEast, cSouth, cWest) % Trigger an error
+        <> % Handle safe states.
+        sum c : Colour, d : CardinalDirection. % 
+            (d == north && cEast == red && cWest == red) -> recieve(north, c) . Monitor(cNorth = c) <> 
+            (d == east && cNorth == red && cSouth == red) -> recieve(east, c) . Monitor(cEast = c) <>
+            (d == south && cEast == red && cWest == red) -> recieve(south, c) . Monitor(cSouth = c) <>
+            (d == west && cNorth == red && cSouth == red) -> recieve(west, c) . Monitor(cWest = c);
+
+
+proc
+
+    Intersection =
+        allow({
+            checked,
+            error
+        },
+        comm({
+           show | recieve -> checke
+        },
+            TrafficLight(north, red) || TrafficLight(east, red) || 
+            TrafficLight(south, red) || TrafficLight(west, red) || 
+            Monitor(red, red, red, red)
+        ));
+
+% Initialization
+init
+    Intersection; % Start the simulation with the Intersection process.

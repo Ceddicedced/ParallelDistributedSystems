@@ -1,0 +1,74 @@
+
+% Definition of data types
+sort
+    CardinalDirection = struct north | east | south | west;   % Cardinal directions of the traffic lights.
+    Axis = struct northSouth | eastWest;                      % Two axes: North-South and East-West.
+
+% Map cardinal directions to axes and define next direction function
+map
+    axis: CardinalDirection -> Axis;                          % Function mapping directions to their respective axes.
+    next: CardinalDirection -> CardinalDirection;             % Function to determine the next direction in the sequence.
+
+% Equations for axis and next direction mappings
+eqn
+    axis(north) = northSouth; axis(south) = northSouth;       % North and South are on the North-South axis.
+    axis(east) = eastWest; axis(west) = eastWest;             % East and West are on the East-West axis.
+    next(north) = east; next(east) = south;                   % Define the sequence of traffic light direction changes.
+    next(south) = west; next(west) = north;
+
+% Definition of traffic light colours and next colour function
+sort
+    Colour = struct red | yellow | green;                     % Traffic light colours.
+
+map
+    next: Colour -> Colour;                                   % Function to determine the next colour in the sequence.
+
+eqn
+    next(red) = green; next(green) = yellow; next(yellow) = red; % Define the sequence of colour changes.
+
+% Actions for showing traffic light colours and axis transitions
+act
+    show: CardinalDirection # Colour;                         % Action to display the current colour for a direction.
+    wasShown: Axis;                                           % Action indicating an axis has completed its cycle.
+
+% Traffic Light Process
+proc
+    % Initial state of traffic lights on the North-South axis.
+    TrafficLight(d: CardinalDirection) = 
+        (d == north || d == south) -> TrafficLight(d, green) <> waitDirection(d) . TrafficLight(d, red);
+
+    % Main process for each traffic light, showing current colour and handling transitions.
+    TrafficLight(d: CardinalDirection, c: Colour)=
+        show(d,c) . wasShown(axis(d)) . (c == red) -> nextDirection(next(d)) . waitDirection(d) . TrafficLight(d, next(c)) <> TrafficLight(d, next(c));
+
+% Additional actions for managing direction changes and axis synchronizations
+act
+    nextDirection: CardinalDirection;                         % Action to transition to the next direction
+    waitDirection: CardinalDirection;                         % Action to wait before changing direction
+    axisWasShown: Axis;                                       % Action indicating a cycle completion on an axis
+    changeDirection: CardinalDirection;                       % Action to trigger a direction change
+
+% Crossing Process
+proc
+    % The intersection process manages synchronization and transitions between traffic lights
+    Crossing = 
+        hide({
+            axisWasShown,
+            changeDirection
+        },
+        allow({
+            show,
+            axisWasShown,
+            changeDirection
+        },
+        comm({
+            waitDirection | nextDirection -> changeDirection, % Synchronize direction changes
+            wasShown | wasShown -> axisWasShown               % Coordinate axis completion cycles
+        },
+            TrafficLight(north) || TrafficLight(east) || TrafficLight(south) || TrafficLight(west)
+        ))) 
+;
+
+% Initialization of the system
+init
+    Crossing;  % Start the simulation with the Crossing process

@@ -1,0 +1,75 @@
+% VM.mcrl2
+% A Simple Vending Machine.
+
+% -----------------------------------------------------------------------------------------------------------------------
+% Definition of the coins
+% All different coins are defined.
+sort
+    Coin = struct _5c | _10c | _20c | _50c | Euro;
+
+% Mapping coins to their value
+map
+    value: Coin  -> Int;
+
+% the value of each coin in cents
+eqn
+    value(_5c) = 5;
+    value(_10c) = 10;
+    value(_20c) = 20;
+    value(_50c) = 50;
+    value(Euro) = 100;
+
+% -----------------------------------------------------------------------------------------------------------------------
+% Definition of the products
+% types of products that the vending machine can output
+sort
+    Product = struct tea | coffee | cake | apple;
+
+% Mapping products to their price
+map
+    price: Product  -> Int;
+
+% product in cents.
+eqn
+    price(tea) = 10;
+    price(coffee) = 25;
+    price(cake) = 60;
+    price(apple) = 80;
+
+% -----------------------------------------------------------------------------------------------------------------------
+% Definition of the actions
+% actions that the vending machine can perform
+act
+    accept: Coin;      % Accepts a coin that isinserted
+    return: Coin;      % returns change
+    offer: Product;    % order a product.
+    serve: Product;    % serve product.
+    returnChange: Int; %return credit as change
+
+% -----------------------------------------------------------------------------------------------------------------------
+% Definition of the processes
+
+% start with 0 cents
+proc
+    VendingMachine = VM(0);    
+
+    % VM is the main process
+    % it can handle accepting coins, offering and serving products and return change
+    VM(credit : Int) =
+        sum c: Coin. (credit < 200) -> accept(c).VM(credit + value(c)) +  % Aceppt only coins when the credit is below 200 (bounded version)
+        sum p: Product. (credit >= price(p)) -> offer(p).serve(p).VM(credit - price(p)) + % if enough money is in VM then offer the product
+        (credit > 0) -> returnChange(credit).VM(0); % Returns change if credit is in VM
+
+    % Return the biggest coins first
+    ReturnChange(credit : Int) =
+        (credit >= 100) -> return(Euro).ReturnChange(credit - 100) +  
+        (credit >= 50) -> return(_50c).ReturnChange(credit - 50) +    
+        (credit >= 20) -> return(_20c).ReturnChange(credit - 20) +    
+        (credit >= 10) -> return(_10c).ReturnChange(credit - 10) +    
+        (credit >= 5) -> return(_5c).ReturnChange(credit - 5) +       
+        (credit == 0) -> tau;                                         % Terminates the process when no credit is left
+
+% -----------------------------------------------------------------------------------------------------------------------
+% Initialization of Vending Machine
+init
+    VendingMachine;

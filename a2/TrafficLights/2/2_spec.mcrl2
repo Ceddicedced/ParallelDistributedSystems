@@ -1,0 +1,63 @@
+sort
+	CardinalDirection = struct north | south | east | west; % store all directions
+	Colour = struct red | green | yellow; % store the colors
+
+map
+	next: Colour -> Colour; % Define function which colors comes next
+	iSsafe: Colour # Colour # Colour # Colour -> Bool; % Return if it is save to change to specific light
+
+var  % Store the colors for each direction
+	nColor: Colour;
+	eColor: Colour;
+	sColor: Colour;
+	wColor: Colour;
+
+eqn % Define which color comes net
+	next(red) = green;
+	next(green) = yellow;
+	next(yellow) = red;
+
+	% it is safe if trafficlights on different axis are not yellow or green at the same time
+	iSsafe(nColor,eColor,sColor,wColor) = !((!(nColor in {red}) || !(sColor in {red})) && (!(wColor in {red}) || !(eColor in {red})));  % Weird way to check if a direction wants to make an illegal move
+	% Like nColor and eColor can't be green at the same time
+
+
+
+% definition of process of the traffic Light
+act
+  show : CardinalDirection # Colour; % what color does a direction have
+
+proc
+	% shows the current color and change to next color
+	TrafficLight(d: CardinalDirection, c: Colour) = 
+		show(d, c). % Show color and direction
+		 TrafficLight(d, next(c)); % Change Traffic Light to next color 
+
+
+% Additional actions for monitoring and synchronization
+act
+	receive: CardinalDirection # Colour;
+	intersectionUnsafe: Colour # Colour # Colour # Colour;
+	colourSeen: CardinalDirection # Colour;
+
+proc
+	% Monitor process to ensure the safety of the intersection
+	Monitor(n: Colour, e: Colour, s: Colour, w: Colour) =
+		(!iSsafe(n,e,s,w)) -> intersectionUnsafe(n,e,s,w)  % Trigger error if unsafe state is detected
+			<> sum c: Colour, d: CardinalDirection . receive(d, next(c)) . % Receive updates from each traffic light
+				(d == north) -> Monitor(next(c), e, s, w) <>
+				(d == east) -> Monitor(n, next(c), s, w) <>
+				(d == south) -> Monitor(n, e, next(c), w) <>
+				(d == west) -> Monitor(n, e, s, next(c));
+	% Overall process for managing the crossing, including all traffic lights and the monitor
+	Crossing = 
+		allow({colourSeen, intersectionUnsafe}, comm({show | receive -> colourSeen},
+			TrafficLight(north, red) 
+			|| TrafficLight(east, red) 
+			|| TrafficLight(south, red) 
+			|| TrafficLight(west, red)
+			|| Monitor(red, red, red, red)));
+
+
+init
+	Crossing;
