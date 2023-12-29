@@ -1,3 +1,4 @@
 *.lts
 *.lps
 artefacts
+*.exe
