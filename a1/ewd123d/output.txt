@@ -81,7 +81,7 @@
 2023/11/03 16:41:20.134147 ewd123d.go:72: Process 2 waiting
 2023/11/03 16:41:20.134237 controller.go:68: outside CS: 2 (100 msecs)
 2023/11/03 16:41:20.134147 ewd123d.go:43: Process 1 waiting
-2023/11/03 16:41:20.134762 controller.go:68: outside CS: 1 (100 msecs) 
+2023/11/03 16:41:20.134762 controller.go:68: outside CS: 1 (100 msecs)
 
 
 Es wird nur Ping-Pong hin und her gespielt. Da die Prozesse die Variablen c1 und c2 immer wieder wechseln.

@@ -34,7 +34,7 @@ act
 % Traffic Light Process
 proc
     % Initial state of traffic lights on the North-South axis.
-    TrafficLight(d: CardinalDirection) = 
+    TrafficLight(d: CardinalDirection) =
         (d == north || d == south) -> TrafficLight(d, green) <> waitDirection(d) . TrafficLight(d, red);
 
     % Main process for each traffic light, showing current colour and handling transitions.
@@ -51,7 +51,7 @@ act
 % Crossing Process
 proc
     % The intersection process manages synchronization and transitions between traffic lights
-    Crossing = 
+    Crossing =
         hide({
             axisWasShown,
             changeDirection
@@ -66,7 +66,7 @@ proc
             wasShown | wasShown -> axisWasShown               % Coordinate axis completion cycles
         },
             TrafficLight(north) || TrafficLight(east) || TrafficLight(south) || TrafficLight(west)
-        ))) 
+        )))
 ;
 
 % Initialization of the system
