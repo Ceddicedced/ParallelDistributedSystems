@@ -30,9 +30,8 @@ The final assignment is an implementation of the mCRL2 traffic light system spec
 ## Repository Structure
 
 - `a1/`: Contains Go files for each mutual exclusion solution and their respective lab reports.
-- `a2/`: 
+- `a2/`:
   - `VendingMachine/`: mCRL2 specifications for the vending machine.
   - `TrafficLights/`: mCRL2 specifications for the traffic light system.
 - `a3/`: Go implementation of the traffic light system using concurrent programming techniques.
 - `README.md`: This file, providing an overview of the repository contents.
-

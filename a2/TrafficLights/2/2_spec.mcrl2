@@ -29,9 +29,9 @@ act
 
 proc
 	% shows the current color and change to next color
-	TrafficLight(d: CardinalDirection, c: Colour) = 
+	TrafficLight(d: CardinalDirection, c: Colour) =
 		show(d, c). % Show color and direction
-		 TrafficLight(d, next(c)); % Change Traffic Light to next color 
+		 TrafficLight(d, next(c)); % Change Traffic Light to next color
 
 
 % Additional actions for monitoring and synchronization
@@ -50,11 +50,11 @@ proc
 				(d == south) -> Monitor(n, e, next(c), w) <>
 				(d == west) -> Monitor(n, e, s, next(c));
 	% Overall process for managing the crossing, including all traffic lights and the monitor
-	Crossing = 
+	Crossing =
 		allow({colourSeen, intersectionUnsafe}, comm({show | receive -> colourSeen},
-			TrafficLight(north, red) 
-			|| TrafficLight(east, red) 
-			|| TrafficLight(south, red) 
+			TrafficLight(north, red)
+			|| TrafficLight(east, red)
+			|| TrafficLight(south, red)
 			|| TrafficLight(west, red)
 			|| Monitor(red, red, red, red)));
 
